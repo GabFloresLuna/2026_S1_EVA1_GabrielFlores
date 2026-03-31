@@ -35,7 +35,7 @@ public class SolicitudServicio
     //Método para crear una solicitud
     public Solicitud crearSolicitud(Solicitud solicitud)
     {
-        return solicitudRepo.save(solicitud);
+        return solicitudRepo.guardar(solicitud);
     }
 
     public Optional<Solicitud> actualizarSolicitud(Long id, Solicitud solicitud)
