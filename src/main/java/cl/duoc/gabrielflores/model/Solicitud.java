@@ -3,7 +3,6 @@ package cl.duoc.gabrielflores.model;
 
 import java.time.LocalDateTime;
 
-import jakarta.validation.constraints.AssertTrue;
 import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
