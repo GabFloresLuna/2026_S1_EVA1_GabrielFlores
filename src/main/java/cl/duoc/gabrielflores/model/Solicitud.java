@@ -29,6 +29,6 @@ public class Solicitud
     @FutureOrPresent
     private LocalDateTime fechaRegistro;
     @Min(value= 1, message= "El nivel debe ser mínimo 1")
-    @Max(value= 5, mesagge= "El nivel debe ser máximo 5")
+    @Max(value= 5, message= "El nivel debe ser máximo 5")
     private int nivelPrioridad;
 }
