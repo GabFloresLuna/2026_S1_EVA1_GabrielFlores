@@ -17,15 +17,16 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Solicitud 
 {
-    @NotNull
+    @NotNull(message= "El id no puede ser nulo")
+    @Min(value= 1, message= "El id debe ser mínimo 1")
     private Long id;
-    @NotBlank
+    @NotBlank(message= "el nombre no puede ser blanco")
     private String nombreString;
-    @NotBlank
+    @NotBlank(message= "la especialidad no puede ser blanco")
     private String especialidadString;
-    @NotNull
+    @NotNull (message= "El estado no puede ser blanco")
     private String estadoString;
-    @PastOrPresent
+    @PastOrPresent (message= "La fecha no puede ser futura")
     private LocalDateTime fechaRegistro;
     @Min(value= 1, message= "El nivel debe ser mínimo 1")
     @Max(value= 5, message= "El nivel debe ser máximo 5")
