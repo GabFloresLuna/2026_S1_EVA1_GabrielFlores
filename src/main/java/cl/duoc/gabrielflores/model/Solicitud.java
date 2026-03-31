@@ -20,7 +20,7 @@ public class Solicitud
     @NotNull
     private Long id;
     @NotBlank
-    private String pacienteString;
+    private String nombreString;
     @NotBlank
     private String especialidadString;
     @NotNull
