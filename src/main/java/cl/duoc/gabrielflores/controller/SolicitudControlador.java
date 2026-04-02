@@ -66,7 +66,7 @@ public class SolicitudControlador
             : ResponseEntity.notFound().build();
     }
     
-    @GetMapping("/{x}")
+    @GetMapping("/antiguas/{x}")
     public ResponseEntity<List<Solicitud>> obtenerSolicitudAntiguas(@PathVariable int x) 
     {
         return ResponseEntity.ok(solicitudServicio.obtenerSolicitudAntiguas(x));
