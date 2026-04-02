@@ -1,10 +1,12 @@
 package cl.duoc.gabrielflores.repository;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Repository;
 
@@ -45,4 +47,18 @@ public class SolicitudRepo
     {
         return registroSolicitud.containsKey(id);
     }
+
+    //Método para listar x solicitudes más antiguas
+    public List<Solicitud> solicitudAntigua(int x)
+        {
+            if (x <= 0 || registroSolicitud == null || registroSolicitud.isEmpty())
+            {
+                return Collections.emptyList();
+            }
+
+            return registroSolicitud.values().stream()
+                .sorted((s1,s2)->s2.getFechaRegistro()
+                .compareTo(s1.getFechaRegistro())).limit(x)
+                .collect(Collectors.toList());
+        }
 }
