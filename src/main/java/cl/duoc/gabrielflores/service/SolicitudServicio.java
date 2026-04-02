@@ -1,5 +1,6 @@
 package cl.duoc.gabrielflores.service;
 
+//imports
 import java.util.List;
 import java.util.Optional;
 
@@ -9,12 +10,15 @@ import org.springframework.stereotype.Service;
 import cl.duoc.gabrielflores.model.Solicitud;
 import cl.duoc.gabrielflores.repository.SolicitudRepo;
 
+//Clase
 @Service
 public class SolicitudServicio 
 {
+    //inicializa repo
     @Autowired
     private SolicitudRepo solicitudRepo;
 
+    //Métodos
     public SolicitudServicio(SolicitudRepo solicitudRepo)
     {
         this.solicitudRepo = solicitudRepo;
@@ -56,5 +60,10 @@ public class SolicitudServicio
             return true;
         }
         return false;
+    }
+
+    public List<Solicitud> obtenerSolicitudAntiguas(int x)
+    {
+        return solicitudRepo.solicitudAntigua(x);
     }
 }
