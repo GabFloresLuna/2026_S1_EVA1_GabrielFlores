@@ -57,8 +57,8 @@ public class SolicitudRepo
             }
 
             return registroSolicitud.values().stream()
-                .sorted((s1,s2)->s2.getFechaRegistro()
-                .compareTo(s1.getFechaRegistro())).limit(x)
+                .sorted((s1,s2)->s1.getFechaRegistro()
+                .compareTo(s2.getFechaRegistro())).limit(x)
                 .collect(Collectors.toList());
         }
 }
